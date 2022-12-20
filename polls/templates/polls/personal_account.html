@@ -1,0 +1,12 @@
+{% extends 'base_template.html' %}
+
+{% block content %}
+  <div>
+      <img src="{{ user.avatar.url }}">
+      <div>
+          <p></p>
+          <a href="{% url 'polls:update_account' %}"><button type="submit" >Редактировать данные</button></a>
+          <button type="submit">Удалить аккаунт</button>
+      </div>
+  </div>
+{% endblock %}

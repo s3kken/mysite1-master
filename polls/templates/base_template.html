@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% block sidebar %}
+        <nav>
+            <a href="{% url 'polls:home_page' %}">Главная</a>
+                {% if user.is_authenticated %}
+                <a href="{% url 'logout' %}">Выйти</a>
+                <a href="{% url 'polls:personal_account' %}">Личный кабинет</a>
+                {% else %}
+                <a href="{% url 'polls:register' %}">Регистрация</a>
+                <a href="{% url 'login' %}">Войти</a>
+                {%endif%}
+        </nav>
+    {% endblock %}
+
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>
